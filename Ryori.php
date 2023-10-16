@@ -5,12 +5,12 @@ require_once 'Menu.php';
 //Ryoriクラス
 class Ryori{
 
-	public Menu $menu;
+	public $menu;
 	private array $menu_list;
 	private int $total_fee;
 	
 	//料理を注文
-	public function orderCooking(Menu $menu, $number){
+	public function orderCooking($menu, $number){
 
 		$this->menu_list[] = 
 							array(
