@@ -7,18 +7,15 @@ class KaraageTeisyoku extends Ryori{
 
 	private string $name;
 	private int $fee;
+	private int $number;
 	private ?string $sauce;
 	private ?int $sauce_fee;
 	private ?int $pieces;
 
-	public function __construct(?string $sauce_type, ?int $pieces){
+	public function __construct(){
 
 		$this->name = 'karaage_teisyoku';
 		$this->fee = 900;
-		if (!empty($sauce_type) && !empty($pieces)) {
-			$this->setSauceType($sauce_type, $pieces);
-		}
-
 	}
 
 	public function setSauceType(string $sauce_type, int $pieces) :void {
@@ -48,6 +45,10 @@ class KaraageTeisyoku extends Ryori{
 		$this->fee = $fee;
 	}
 
+	public function setNumber(int $number) :void {
+		$this->number = $number;
+	}
+
 	public function setSauce(string $sauce) :void {
 		$this->sauce = $sauce;
 	}
@@ -67,6 +68,10 @@ class KaraageTeisyoku extends Ryori{
 
 	public function getFee() :int {
 		return $this->fee;
+	}
+
+	public function getNumber() :int {
+		return $this->number;
 	}
 
 	public function getSauce() :string {

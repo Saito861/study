@@ -1,7 +1,5 @@
 <?php
 
-require_once 'Menu.php';
-
 //Ryoriクラス
 class Ryori{
 
