@@ -7,7 +7,6 @@ class KaraageTeisyoku extends Ryori{
 
 	private string $name;
 	private int $fee;
-	private int $number;
 	private ?string $sauce;
 	private ?int $sauce_fee;
 	private ?int $pieces;
@@ -37,18 +36,6 @@ class KaraageTeisyoku extends Ryori{
 		$this->setPieces($pieces);
 	}
 
-	public function setName(string $name) :void {
-		$this->name = $name;
-	}
-
-	public function setFee(int $fee) :void {
-		$this->fee = $fee;
-	}
-
-	public function setNumber(int $number) :void {
-		$this->number = $number;
-	}
-
 	public function setSauce(string $sauce) :void {
 		$this->sauce = $sauce;
 	}
@@ -68,10 +55,6 @@ class KaraageTeisyoku extends Ryori{
 
 	public function getFee() :int {
 		return $this->fee;
-	}
-
-	public function getNumber() :int {
-		return $this->number;
 	}
 
 	public function getSauce() :string {

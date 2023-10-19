@@ -1,30 +1,20 @@
 <?php
 
-require_once 'KaraageTeisyoku.php';
-require_once 'ChikenNanban.php';
-require_once 'Kare.php';
 require_once 'Ryori.php';
+require_once 'Teisyokuya.php';
 
-$karaage_teisyoku = new KaraageTeisyoku();
-$chiken_nanban = new ChikenNanban();
-$kare = new Kare();
+$ryori = new ryori();
 
 /** 料理を注文 */
-$ryori = new Ryori();
+$teisyokuya = new Teisyokuya();
 
-$karaage_teisyoku->setNumber(1);
-$karaage_teisyoku->setSauceType('chiri_sauce', 1);
+$teisyokuya->orderCooking($ryori->getMenuList()['karaage_teisyoku']->getName(), $ryori->getMenuList()['karaage_teisyoku']->getFee(), 1);
+$ryori->getMenuList()['karaage_teisyoku']->setSauceType('chiri_sauce', 1);
+$teisyokuya->orderCooking($ryori->getMenuList()['karaage_teisyoku']->getSauce(), $ryori->getMenuList()['karaage_teisyoku']->getSauceFee(), $ryori->getMenuList()['karaage_teisyoku']->getPieces());
 
-$chiken_nanban->setNumber(2);
-$kare->setNumber(3);
+$teisyokuya->orderCooking($ryori->getMenuList()['chiken_nanban']->getName(), $ryori->getMenuList()['chiken_nanban']->getFee(), 2);
+$teisyokuya->orderCooking($ryori->getMenuList()['kare']->getName(), $ryori->getMenuList()['kare']->getFee(), 3);
 
-$ryori->orderCooking($karaage_teisyoku, $karaage_teisyoku->getNumber());
-$ryori->orderCooking($karaage_teisyoku, $karaage_teisyoku->getPieces());
-$ryori->orderCooking($chiken_nanban, $chiken_nanban->getNumber());
-$ryori->orderCooking($kare, $kare->getNumber());
-
-
-
-$ryori->displayReceipt();
+$teisyokuya->displayReceipt();
 
 ?>
