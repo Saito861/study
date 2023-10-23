@@ -5,8 +5,8 @@ require_once 'Ryori.php';
 //Menuクラス
 class ChikenNanban extends Ryori{
 
-	private string $name;
-	private int $fee;
+	public string $name;
+	public int $fee;
 
 	public function __construct(){
 
@@ -14,13 +14,4 @@ class ChikenNanban extends Ryori{
 		$this->fee = 1000;
 
 	}
-
-	public function getName() :string {
-		return $this->name;
-	}
-
-	public function getFee() :int {
-		return $this->fee;
-	}
-
 }

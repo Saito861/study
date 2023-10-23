@@ -5,8 +5,8 @@ require_once 'Ryori.php';
 //Menuクラス
 class KaraageTeisyoku extends Ryori{
 
-	private string $name;
-	private int $fee;
+	public string $name;
+	public int $fee;
 	private ?string $sauce;
 	private ?int $sauce_fee;
 	private ?int $pieces;
@@ -46,16 +46,7 @@ class KaraageTeisyoku extends Ryori{
 
 	public function setPieces(int $pieces) :void {
 		$this->pieces = $pieces;
-	}
-	
-
-	public function getName() :string {
-		return $this->name;
-	}
-
-	public function getFee() :int {
-		return $this->fee;
-	}
+	}	
 
 	public function getSauce() :string {
 		return $this->sauce;
